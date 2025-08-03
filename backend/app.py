@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from pymongo import MongoClient
 import re
+import os
 from bson import ObjectId
 
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
@@ -89,5 +90,5 @@ def debug_all():
     return jsonify(convert_objectid(all_docs))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
