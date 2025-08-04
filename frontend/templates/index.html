@@ -8,17 +8,16 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f4f4;
-            color: #111;
+            background-color: #0f2454; /* deep blue like Skyscanner */
+            color: #ffffff;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #ffffff;
+            background: #001e3c;
             padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         header img {
@@ -28,51 +27,50 @@
         nav a {
             margin: 0 1rem;
             text-decoration: none;
-            color: #333;
+            color: #ffffff;
             font-weight: bold;
         }
 
         .hero {
-            background-image: url("/static/images/banner.jpg");
-            background-size: cover;
-            background-position: center;
             text-align: center;
             padding: 5rem 2rem;
-            color: #000;
+            color: #ffffff;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
-            color: #000;
+            color: #ffffff;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #222;
+            color: #e0e0e0;
         }
 
         .search-form {
             max-width: 600px;
             margin: 0 auto;
+            display: flex;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .search-form input[type="text"] {
+            flex: 1;
             padding: 0.75rem;
-            width: 80%;
             border: none;
-            border-radius: 5px 0 0 5px;
             font-size: 1rem;
         }
 
         .search-form button {
             padding: 0.75rem 1.5rem;
             border: none;
-            background: #007BFF;
+            background: #1c86ee;
             color: white;
             font-size: 1rem;
-            border-radius: 0 5px 5px 0;
             cursor: pointer;
         }
 
@@ -89,9 +87,10 @@
             background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.2s;
+            color: #000;
         }
 
         .category-card:hover {
@@ -110,16 +109,14 @@
             margin: 0;
             font-size: 1.1rem;
             font-weight: 600;
-            color: #111;
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #ffffff;
+            background-color: #001e3c;
             font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid #ddd;
+            color: #ccc;
             margin-top: 2rem;
         }
     </style>
@@ -165,7 +162,7 @@
     </section>
 
     <footer>
-        &copy; 2025 ProductWise. All rights reserved.
+        &copy; @2025 V3 Software Consultancy Service Private Limited. All rights reserved.
     </footer>
 </body>
 </html>
