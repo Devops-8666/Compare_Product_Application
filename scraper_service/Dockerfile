@@ -1,0 +1,28 @@
+# Use official Python image
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy all scraper scripts
+COPY scraper_service/ /app/
+
+# If your MongoDB logic is shared in ../db.py, copy it
+COPY db.py /app/db.py
+
+# Copy Playwright dependency config
+COPY requirements.txt /app/requirements.txt
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install Playwright browser dependencies
+RUN apt-get update && \
+    apt-get install -y wget gnupg ca-certificates fonts-liberation libnss3 libxss1 libasound2 libatk1.0-0 libatk-bridge2.0-0 libgbm1 libgtk-3-0 libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 xdg-utils && \
+    pip install playwright && \
+    playwright install --with-deps
+
+# Default command to run Amazon & Myntra scrapers (can be customized later)
+CMD ["bash", "-c", "python3 amazon_scraper_worker.py && python3 myntra_scraper_worker.py"]
+
+

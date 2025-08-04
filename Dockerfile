@@ -16,7 +16,7 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Expose port
-EXPOSE 5000
+EXPOSE 8000
 
 # Run the app
 CMD ["python3", "backend/app.py"]
