@@ -1,18 +1,23 @@
-# Use official Python image
+# Use an official Python runtime
 FROM python:3.10-slim
 
-# Set working directory inside the container
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Create working directory
 WORKDIR /app
 
-# Copy everything into the container
+# Copy everything
 COPY . .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
-# Expose port Flask runs on
+# Expose port
 EXPOSE 5000
 
-# Start the Flask app
-CMD ["python", "backend/app.py"]
+# Run the app
+CMD ["python3", "backend/app.py"]
 
