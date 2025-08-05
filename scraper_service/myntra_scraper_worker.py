@@ -1,6 +1,6 @@
 # myntra_scraper_worker.py
 
-from scraper.myntra import scrape_myntra
+from myntra_scraper import scrape_myntra
 
 def main():
     query = input("Enter a product to scrape from Myntra: ").strip()

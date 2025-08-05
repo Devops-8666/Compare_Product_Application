@@ -1,4 +1,4 @@
-from scraper.amazon_all_pages import scrape_amazon
+from amazon_scraper import scrape_amazon
 from db import insert_products  # ✅ Import the DB insertion function
 
 def run_scraper():
