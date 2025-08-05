@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copy all scraper scripts
-COPY scraper_service/ /app/
+COPY . ..
 
 # If your MongoDB logic is shared in ../db.py, copy it
 COPY db.py /app/db.py
