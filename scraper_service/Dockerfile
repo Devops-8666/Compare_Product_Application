@@ -23,6 +23,6 @@ RUN apt-get update && \
     playwright install --with-deps
 
 # Default command to run Amazon & Myntra scrapers (can be customized later)
-CMD ["bash", "-c", "python3 amazon_scraper_worker.py && python3 myntra_scraper_worker.py"]
+CMD ["python3", "scraper_runner.py"]
 
 
