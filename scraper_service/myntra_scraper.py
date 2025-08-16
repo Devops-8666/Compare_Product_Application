@@ -10,7 +10,7 @@ def clean_price(text):
 def scrape_myntra(search_query):
     all_products = []
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
 
