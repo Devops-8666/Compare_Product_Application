@@ -1,14 +1,9 @@
 # scraper_runner.py
 
-import os
-import time
 from amazon_scraper import scrape_amazon
 from myntra_scraper import scrape_myntra
 from db import get_db
-
-# Read configs from environment (ConfigMap in OpenShift will inject these)
-SCRAPER_INTERVAL = int(os.getenv("SCRAPER_INTERVAL", "120"))  # default 120 minutes
-SCRAPER_SITES = os.getenv("SCRAPER_SITES", "amazon,myntra").split(",")
+import time
 
 def get_tasks():
     db = get_db()
@@ -20,13 +15,11 @@ def mark_done(query):
 
 def scrape_and_store(query):
     print(f"\n🔁 Scraping for: {query}")
-    if "amazon" in SCRAPER_SITES:
-        scrape_amazon(query)  # inserts internally
-    if "myntra" in SCRAPER_SITES:
-        scrape_myntra(query)  # inserts internally
+    scrape_amazon(query)  # inserts internally
+    scrape_myntra(query)  # inserts internally
     mark_done(query)
 
-def run_periodically(interval_minutes=SCRAPER_INTERVAL):
+def run_periodically(interval_minutes=120):  # run once a day
     while True:
         print("\n🔍 Checking for new scrape tasks...")
         tasks = get_tasks()
