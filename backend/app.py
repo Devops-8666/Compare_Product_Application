@@ -1,20 +1,20 @@
 ## Appdynamics Code  Start#
-import os
-from appdynamics.agent import api as appd
+#import os
+#from appdynamics.agent import api as appd
 
-appd.init({
-    'app_name': 'ProductWiseApp',
-    'tier_name': 'FlaskUI' if 'FLASK_APP' in os.environ else 'ScraperService',
-    'node_name': os.getenv('HOSTNAME', 'local-node'),
-    'controller': {
-        'host': 'https://curie202508052325567.saas.appdynamics.com',
-        'port': 443,
-        'ssl': True
-    },
-    'account': 'curie202508052325567',
-    'access_key': 'd4jmdkxr1vtg',
-    'proxy': None
-})
+#appd.init({
+ #   'app_name': 'ProductWiseApp',
+  #  'tier_name': 'FlaskUI' if 'FLASK_APP' in os.environ else 'ScraperService',
+   # 'node_name': os.getenv('HOSTNAME', 'local-node'),
+    #'controller': {
+     #   'host': 'https://curie202508052325567.saas.appdynamics.com',
+      #  'port': 443,
+       # 'ssl': True
+   # },
+    #'account': 'curie202508052325567',
+    #'access_key': 'd4jmdkxr1vtg',
+    #'proxy': None
+#})
 
 
 ##Appdyamics Code End##
