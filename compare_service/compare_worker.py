@@ -3,11 +3,17 @@ from pymongo import MongoClient      # Import MongoDB client
 import re                            # For regex-based title cleaning
 from collections import defaultdict  # For grouping products by key
 from bson.objectid import ObjectId   # To handle MongoDB ObjectIds
+import os
+#from dotenv import load_dotenv  #remove for openshift deplpy to take env from configmap
+
+# load local .env (ignored in container if not present)
+#load_dotenv()#remove for openshift deploy
 
 # ✅ MongoDB connection
-MONGO_URI = "mongodb+srv://vinaycool1512:Qi5ZoWnBnchMslSr@compareproduct.kqhvrxt.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URI = os.getenv("MONGO_URI")
+DB_NAME = os.getenv("DB_NAME", "productwise")
 client = MongoClient(MONGO_URI)     # Connect to MongoDB Atlas cluster
-db = client["productwise"]          # Select "productwise" database
+db = client[DB_NAME]          # Select "productwise" database
 raw = db["raw_product_price"]       # Collection with raw scraped prices
 best = db["product_best_prices"]    # Collection with best price per product
 meta = db["compare_metadata"]       # Metadata collection (used to track last processed record)

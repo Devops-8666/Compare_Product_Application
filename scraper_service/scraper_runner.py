@@ -19,8 +19,8 @@ def scrape_and_store(query):
     scrape_myntra(query)  # inserts internally
     mark_done(query)
 
-def run_periodically(interval_minutes=120):  # run once a day
-    while True:
+def run_once(interval_minutes=120):  # run once a day
+  #  while True:
         print("\n🔍 Checking for new scrape tasks...")
         tasks = get_tasks()
 
@@ -30,9 +30,9 @@ def run_periodically(interval_minutes=120):  # run once a day
         else:
             print("✅ No pending scrape tasks found.")
 
-        print(f"⏳ Sleeping for {interval_minutes} minutes...\n")
-        time.sleep(interval_minutes * 60)
+#        print(f"⏳ Sleeping for {interval_minutes} minutes...\n")
+ #       time.sleep(interval_minutes * 60)
 
 if __name__ == "__main__":
-    run_periodically()
+    run_once()
 
