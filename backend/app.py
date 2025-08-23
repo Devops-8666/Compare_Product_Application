@@ -41,6 +41,10 @@ def index():
         return redirect(url_for("search_product", product_name=query))
     return render_template("index.html")
 
+@app.route("/health")
+def health():
+    return "OK", 200
+
 #@app.route("/product/<product_name>")
 #def search_product(product_name):
  #   search_regex = re.compile(re.escape(product_name), re.IGNORECASE)
