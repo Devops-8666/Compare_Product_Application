@@ -2,21 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProductWise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}ProductWise — Compare & Save{% endblock %}</title>
+
+  <!-- SEO basics -->
+  <meta name="description" content="ProductWise compares prices across Amazon, Myntra, Croma and more to help you find the best deals fast.">
+  <meta name="keywords" content="product comparison, best price, Amazon, Myntra, Croma, deals, India">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://compare-product-application.onrender.com/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="ProductWise — Compare & Save">
+  <meta property="og:description" content="Find the best price across top Indian stores in seconds.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <h1>🛍️ ProductWise</h1>
-    <p>Compare prices across sites like Amazon, Myntra, and more!</p>
+    <p>Compare prices across Amazon, Myntra, Croma and more</p>
   </header>
-  <main>
+
+  <nav class="nav">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('blog') }}">Blog</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+    <a href="{{ url_for('privacy') }}">Privacy</a>
+    <a href="{{ url_for('terms') }}">Terms</a>
+    <a href="{{ url_for('disclaimer') }}">Disclaimer</a>
+  </nav>
+
+  <main class="container">
     {% block content %}{% endblock %}
   </main>
-  <footer>
-    <p>&copy; 2025 ProductWise. All rights reserved.</p>
+
+  <footer class="footer">
+    <p>© 2025 ProductWise. This site may contain affiliate links; we may earn a commission at no extra cost to you.</p>
   </footer>
+
+  <!-- Cuelinks SmartScript (use your exact snippet from Cuelinks dashboard if it differs) -->
+  <script type="text/javascript">
+    (function(w){var d=document; var s=d.createElement('script'); s.type='text/javascript'; s.async=true;
+    s.src='//cdn.cuelinks.com/js/cuelinksv2.js'; s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&rs!='complete'&&rs!='loaded')return; try{ w.cueInit && w.cueInit(); }catch(e){}};
+    var scr=d.getElementsByTagName('script')[0]; scr.parentNode.insertBefore(s, scr);})(window);
+  </script>
 </body>
 </html>
 

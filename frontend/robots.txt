@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://compare-product-application.onrender.com/sitemap.xml

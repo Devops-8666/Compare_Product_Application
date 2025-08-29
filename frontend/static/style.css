@@ -77,4 +77,10 @@ footer {
   font-size: 14px;
   color: #777;
 }
+.site-header { text-align:center; padding:20px 10px; }
+.nav { display:flex; gap:12px; justify-content:center; padding:10px; border-top:1px solid #eee; border-bottom:1px solid #eee; flex-wrap:wrap; }
+.nav a { text-decoration:none; padding:6px 10px; }
+.container { max-width: 960px; margin: 0 auto; padding: 1rem; }
+.footer { text-align:center; font-size:0.9rem; color:#555; margin-top:40px; padding:20px 10px; border-top:1px solid #eee; }
+.post-body p { line-height: 1.7; }
 

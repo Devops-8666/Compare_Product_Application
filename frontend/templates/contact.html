@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | ProductWise</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #0f2454; color: #ffffff; }
+        header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: #002b5c; padding: 1rem 2rem; }
+        header img { height: 60px; }
+        header h1 { font-size: 1.6rem; margin: 0; }
+        nav { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+        nav a { margin: 0.5rem; text-decoration: none; color: #ffffff; font-weight: bold; }
+        .hero { text-align: center; padding: 3rem 1rem; }
+        .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #ffffff; }
+        .hero p { font-size: 1rem; margin-bottom: 2rem; color: #e0e0e0; }
+        .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1200px; margin: auto; }
+        .category-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; transition: transform 0.2s; color: #000; }
+        .category-card:hover { transform: scale(1.03); }
+        .category-card img { width: 100%; height: 160px; object-fit: cover; background: #eee; }
+        .category-card h3 { padding: 1rem; margin: 0; font-size: 1.1rem; font-weight: 600; }
+        footer { text-align: center; padding: 2rem; background-color: #001e3c; font-size: 0.9rem; color: #ccc; margin-top: 2rem; }
+        @media (max-width: 600px) {
+            header { flex-direction: column; align-items: flex-start; text-align: left; }
+            header h1 { font-size: 1.3rem; margin-top: 0.5rem; }
+            nav { justify-content: flex-start; width: 100%; padding-top: 0.5rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .search-form input[type="text"], .search-form button { width: 100%; }
+            .category-card img { height: 140px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="{{ url_for('static', filename='logo_fixed.png') }}" alt="Logo" style="margin-right: 1rem;">
+            <h1>v3-Software Product Price Compare</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Contact Us</h1>
+        <p>Have questions or feedback? We’d love to hear from you.</p>
+        <p>Email: <a href="mailto:support@v3software.com" style="color:#4db2ff;">support@v3software.com</a></p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Address: V3 Software Consultancy Service Pvt Ltd, Bengaluru, India</p>
+    </section>
+
+    <footer>
+        &copy; 2025 V3 Software Consultancy Service Private Limited. All rights reserved.
+    </footer>
+</body>
+</html>
+

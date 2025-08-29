@@ -20,7 +20,7 @@
 ##Appdyamics Code End##
 
 
-from flask import Flask, render_template, request, redirect, url_for, jsonify, send_from_directory, abort
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from pymongo import MongoClient
 import re
 import os
@@ -114,68 +114,6 @@ def convert_objectid(o):
 def debug_all():
     all_docs = list(collection.find().limit(50))
     return jsonify(convert_objectid(all_docs))
-
-# ---- Content & Blog routes for Cuelinks compliance ----
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
-
-@app.route("/privacy")
-def privacy():
-    return render_template("privacy.html")
-
-@app.route("/terms")
-def terms():
-    return render_template("terms.html")
-
-@app.route("/disclaimer")
-def disclaimer():
-    return render_template("disclaimer.html")
-
-@app.route("/blog")
-def blog():
-    import json, os
-    blog_path = os.path.join(os.path.dirname(__file__), "blog", "posts.json")
-    try:
-        with open(blog_path, "r") as f:
-            posts = json.load(f)
-    except Exception:
-        posts = []
-    class PostObj:
-        def __init__(self, d): self.__dict__.update(d)
-    posts = [PostObj(p) for p in posts]
-    return render_template("blog_index.html", posts=posts)
-
-@app.route("/blog/<slug>")
-def blog_post(slug):
-    import json, os
-    blog_path = os.path.join(os.path.dirname(__file__), "blog", "posts.json")
-    try:
-        with open(blog_path, "r") as f:
-            posts = json.load(f)
-    except Exception:
-        posts = []
-    post = next((p for p in posts if p.get("slug")==slug), None)
-    if not post:
-        abort(404)
-    return render_template("blog_post.html", post=post)
-
-# Serve SEO files from /frontend/
-@app.route('/robots.txt')
-def robots_txt():
-    import os
-    return send_from_directory(os.path.join(app.static_folder, '..'), 'robots.txt')
-
-@app.route('/sitemap.xml')
-def sitemap_xml():
-    import os
-    return send_from_directory(os.path.join(app.static_folder, '..'), 'sitemap.xml')
-# ---- end ----
-
 
 if __name__ == "__main__":
      app.run(host='0.0.0.0', port=8000, debug=True)

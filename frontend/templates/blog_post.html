@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }} | ProductWise</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #0f2454; color: #ffffff; }
+        header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: #002b5c; padding: 1rem 2rem; }
+        header img { height: 60px; }
+        header h1 { font-size: 1.6rem; margin: 0; }
+        nav { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+        nav a { margin: 0.5rem; text-decoration: none; color: #ffffff; font-weight: bold; }
+        .hero { text-align: center; padding: 3rem 1rem; }
+        .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #ffffff; }
+        .hero p { font-size: 1rem; margin-bottom: 1rem; color: #e0e0e0; }
+        .content { max-width: 900px; margin: 0 auto; padding: 0 1rem 2rem; }
+        .content h2 { color: #ffffff; }
+        .content p, .content li { color: #e0e0e0; line-height: 1.7; }
+        .back-link { display: inline-block; margin-top: 1.5rem; color: #4db2ff; text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 2rem; background-color: #001e3c; font-size: 0.9rem; color: #ccc; margin-top: 2rem; }
+        @media (max-width: 600px) {
+            header { flex-direction: column; align-items: flex-start; text-align: left; }
+            header h1 { font-size: 1.3rem; margin-top: 0.5rem; }
+            nav { justify-content: flex-start; width: 100%; padding-top: 0.5rem; }
+            .hero h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="{{ url_for('static', filename='logo_fixed.png') }}" alt="Logo" style="margin-right: 1rem;">
+            <h1>v3-Software Product Price Compare</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>{{ post.title }}</h1>
+        <p>Published on {{ post.date }}</p>
+    </section>
+
+    <div class="content">
+        {{ post.body | safe }}
+        <a href="{{ url_for('blog') }}" class="back-link">← Back to Blog</a>
+    </div>
+
+    <footer>
+        &copy; 2025 V3 Software Consultancy Service Private Limited. All rights reserved.
+    </footer>
+</body>
+</html>
+
