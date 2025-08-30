@@ -51,6 +51,7 @@
     </section>
 
     <div class="content">
+	<img src="/static/images/{{ post.image if post.image else 'default.jpg' }}" alt="{{ post.title }}" style="width:100%; max-height:350px; object-fit:cover; border-radius:10px; margin-bottom:1rem;">    
         {{ post.body | safe }}
         <a href="{{ url_for('blog') }}" class="back-link">← Back to Blog</a>
     </div>
