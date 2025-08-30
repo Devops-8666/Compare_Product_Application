@@ -58,6 +58,20 @@
     "title": "Smart Home Gadgets You Must Have (2025) — Starter Kit",
     "date": "2025-07-12",
     "body": "<p>Start with smart plugs, bulbs, and cameras. Keep devices on 2.4GHz if your router splits bands. Use routines for energy savings.</p>"
+  },
+   {
+    "slug": "best-smartphones-under-20000-2025-india",
+    "title": "Best Smartphones Under ₹20,000 in India (2025) — Value Picks",
+    "date": "2025-08-10",
+    "image": "smartphones.jpg",
+    "body": "<p>In 2025, the sub-₹20k segment offers 5G, 120Hz displays, and big batteries. Prefer 6GB/128GB, 5000mAh with fast charging, and recent Dimensity or Snapdragon chips. Prices change during sales—always verify the final price on the retailer page.</p>"
+  },
+  {
+    "slug": "top-10-laptops-for-developers-2025",
+    "title": "Top 10 Laptops for Developers (2025) — Coding, Docker, Battery",
+    "date": "2025-08-08",
+    "image": "laptops.jpg",
+    "body": "<p>Look for recent Intel Core Ultra/AMD Ryzen 7+, 16GB+ RAM (32GB for heavy Docker), fast NVMe SSD, and a 14–16” display. Mind thermals and keyboard quality.</p>"
   }
 ]
 
